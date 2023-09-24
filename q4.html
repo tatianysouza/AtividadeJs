@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Conversor de temperatura</title>
+</head>
+<body>
+    <header>
+        <div class="box">
+          <h2 class="titulo-principal">Questões JavaScript</h2>
+        </div>
+    </header>
+    <main>
+        <section class="box">
+            <h2 class="titulos">Exercício</h2>
+        <form id="form">
+            <label style="font-weight: bold">Questão 4: Conversor de temperatura</label><br>
+            <div class="grupo">
+            <label>Temperatura:</label>
+            <input type="number" id="temperatura" placeholder="Digite a temperatura em celsius" class="input-medio">
+            <p style="font-weight: bold">Kelvin: <span id="kelvin"></span></p>
+            <p style="font-weight: bold">Fahrenheit: <span id="Fahrenheit"></span></p>  
+            <p id="errorMsg" style="color: crimson;"></p>
+            </div>
+        </form>
+        <button class="bot" onclick="location.href='index.html'">Voltar</button>
+        </section>
+    </main>
+
+
+<script>
+const celsiusInput = document.getElementById('temperatura');
+celsiusInput.addEventListener('keyup', () => {
+    const temperatura = parseInt(document.getElementById("temperatura").value);
+	let kel = converterKelvin(temperatura);
+    let fahr = converterFahrenheit(temperatura);
+    document.getElementById("kelvin").innerHTML = kel;
+    document.getElementById("Fahrenheit").innerHTML = fahr;
+    const errorMsg = document.getElementById('errorMsg');
+        if (isNaN(temperatura)) {
+            errorMsg.textContent = 'Por favor digite um valor válido!';
+            document.getElementById("kelvin").textContent = '-';
+            document.getElementById("Fahrenheit").textContent = '-';
+            return;
+        }
+        errorMsg.textContent = ''; 
+});
+
+const converterKelvin = (temperatura) => (temperatura+273.15);
+const converterFahrenheit = (temperatura) => (temperatura*1.8+32);
+</script>
+
+</body>
+</html>

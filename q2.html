@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <title>Calculadora de Potência</title>
+</head>
+<body>
+
+  <header>
+    <div class="box">
+      <h2 class="titulo-principal">Questões JavaScript</h2>
+    </div>
+  </header>
+  <main>
+    <section class="box">
+      <h2 class="titulos">Exercício</h2>
+
+    <form id="form">
+      <div class="">
+      <label style="font-weight: bold">Questão 2: Calcular potência</label>
+      </div>
+
+      <div class="grupo">
+        <label>Base:</label>
+        <input id="base" type="number" placeholder="Digite a base" class="input-medio"><br>
+      </div>
+
+      <div class="grupo">
+        <label>Expoente:</label>
+        <input id="expoente" type="number" placeholder="Digite o expoente" class="input-medio"><br>
+      </div>
+      <button id="calcular" class="botao" >Calcular</button>
+    </form>
+    <div id="resultado"></div>
+    <button class="bot" onclick="location.href='index.html'">Voltar</button>
+    </section>
+  </main>
+
+<script>
+const elemento = document.getElementById("calcular");
+elemento.addEventListener("click", () => {
+    const base = parseInt(document.getElementById("base").value);
+    const expoente = parseInt(document.getElementById("expoente").value);
+    const resultado = calcularPotencia(base, expoente);
+    document.getElementById("resultado").innerHTML = "Resultado: " + resultado;
+    event.preventDefault();
+        form.reset();
+});
+
+const calcularPotencia = (base, expoente) => Math.pow(base, expoente);
+
+</script>
+</body>
+</html>

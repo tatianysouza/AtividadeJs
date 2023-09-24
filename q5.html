@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Sorte nos dados</title>
+</head>
+<body>
+    <header>
+        <div class="box">
+          <h2 class="titulo-principal">Questões JavaScript</h2>
+        </div>
+    </header>
+    <main>
+        <section class="box">
+          <h2 class="titulos">Exercício</h2>
+    
+        <form id="form">
+          <div class="">
+          <label style="font-weight: bold">Questão 5: Sorte nos dados</label>
+          </div>
+          <button id="simular" class="botao">Simular</button>
+          <p style="font-weight: bold">Resultado 1:  <span style="color: #4f0080;" id="um"> </span></p>
+          <p style="font-weight: bold">Resultado 2:  <span style="color: #4f0080;" id="dois"> </span></p>
+          <p style="font-weight: bold">Resultado 3:  <span style="color: #4f0080;" id="tres"> </span></p>
+          <p style="font-weight: bold">Resultado 4:  <span style="color: #4f0080;" id="quatro"> </span></p>
+          <p style="font-weight: bold">Resultado 5:  <span style="color: #4f0080;" id="cinco"> </span></p>
+          <p style="font-weight: bold">Resultado 6:  <span style="color: #4f0080;" id="seis"> </span></p>
+        </form>
+        <button class="bot" onclick="location.href='index.html'">Voltar</button>
+        </section>
+    </main>
+
+<script>
+const elemento = document.getElementById("simular");
+elemento.addEventListener("click", () => {
+    let one = 0;
+    let two = 0;
+    let three = 0;
+    let four = 0;
+    let five = 0;
+    let six = 0;
+    for (let i =1; i<=1000000; i ++){
+        const resultado = Math.floor(Math.random() * 6) + 1;
+        if (resultado == 1){
+            one += 1;
+        }
+        else if (resultado == 2){
+            two += 1;
+        }
+        else if (resultado == 3){
+            three +=1;
+        }
+        else if(resultado == 4){
+            four +=1;
+        }
+        else if(resultado == 5){
+            five +=1;
+        }
+        else{
+            six +=1;
+        }
+    }
+    document.getElementById("um").innerHTML = one;
+    document.getElementById("dois").innerHTML = two;
+    document.getElementById("tres").innerHTML = three;
+    document.getElementById("quatro").innerHTML = four;
+    document.getElementById("cinco").innerHTML = five;
+    document.getElementById("seis").innerHTML = six;
+    event.preventDefault();
+});
+</script> 
+</body>
+</html>

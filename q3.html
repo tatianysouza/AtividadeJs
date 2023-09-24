@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <title>Gasolina e Álcool</title>
+</head>
+<body>
+
+  <header>
+    <div class="box">
+      <h2 class="titulo-principal">Questões JavaScript</h2>
+    </div>
+  </header>
+  <main>
+    <section class="box">
+      <h2 class="titulos">Exercício</h2>
+
+    <form id="form">
+      <div class="">
+      <label style="font-weight: bold">Questão 3: Álcool ou Gasolina?</label>
+      </div>
+
+      <div class="grupo">
+        <label >Álcool:</label>
+        <input id="alcool" type="number" placeholder="Digite o valor do álcool" class="input-medio"><br>
+      </div>
+
+      <div class="grupo">
+        <label>Gasolina:</label>
+        <input id="gasolina" type="number" placeholder="Digite o valor da gasolina" class="input-medio"><br>
+      </div>
+      <button id="verificar" class="botao" >Verificar</button>
+    </form>
+    <div id="resultado"></div>
+    <button class="bot" onclick="location.href='index.html'">Voltar</button>
+    </section>
+  </main>
+
+<script>
+const elemento = document.getElementById("verificar");
+elemento.addEventListener("click", () => {
+    const alcool = parseFloat(document.getElementById("alcool").value);
+    const gasolina = parseFloat(document.getElementById("gasolina").value);
+    const resultado = calcularMelhorCombustivel(alcool, gasolina);
+    if (resultado == 0){
+        document.getElementById("resultado").innerHTML = "Resultado: " + "Álcool";
+    }
+    else {
+        document.getElementById("resultado").innerHTML = "Resultado: " + "Gasolina";
+    }
+    event.preventDefault();
+        form.reset();
+});
+
+function calcularMelhorCombustivel(alcool, gasolina){
+    if (alcool > gasolina){
+        return 1;
+    }
+    return 0;
+}
+
+</script>
+</body>
+</html>

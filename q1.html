@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <title>Números aleatórios</title>
+</head>
+<body>
+  <header>
+    <section class="box">
+      <h2 class="titulo-principal">Questões JavaScript</h2>
+    </section>
+  </header>
+  <main>
+    <section class="box">
+      <h2 class="titulos">Exercício</h2>
+      <form id="form">
+        <div class="">
+        <label style="font-weight: bold">Questão 1: Aleatórios de 1 a 100</label>
+        </div>
+
+      <button id="gerar" class="botao" >Gerar</button>
+      </form>
+      <button class="bot" onclick="location.href='index.html'">Voltar</button>
+    </section> 
+  </main>
+    <section class="box">
+      <form class="form">
+      <div class="grupo">
+        <h1>Números aleatórios</h1>
+        <ul id="lista">
+      </div>
+      </form>
+    </section>
+  </main>
+      
+<script>
+const elemento = document.getElementById("gerar");
+elemento.addEventListener("click", function(event) {
+    event.preventDefault();
+    GerarNumero();
+});
+
+
+function GerarNumero(){
+  let numero = Math.floor(Math.random() * 100)+1;
+  var lista  = document.getElementById("lista").innerHTML;
+  lista = lista +"<li>"+numero+"</li>";
+
+  document.getElementById("lista").innerHTML = lista;
+}
+
+</script>
+</body>
+</html>
